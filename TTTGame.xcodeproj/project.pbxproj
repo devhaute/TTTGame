@@ -12,8 +12,6 @@
 		2FC8BEB52B0B399C0046A90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB42B0B399C0046A90D /* Assets.xcassets */; };
 		2FC8BEB82B0B399C0046A90D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB72B0B399C0046A90D /* Preview Assets.xcassets */; };
 		2FC8BEC22B0B399C0046A90D /* TTTGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */; };
-		2FC8BECC2B0B399C0046A90D /* TTTGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BECB2B0B399C0046A90D /* TTTGameUITests.swift */; };
-		2FC8BECE2B0B399C0046A90D /* TTTGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BECD2B0B399C0046A90D /* TTTGameUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +40,6 @@
 		2FC8BEBD2B0B399C0046A90D /* TTTGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameTests.swift; sourceTree = "<group>"; };
 		2FC8BEC72B0B399C0046A90D /* TTTGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FC8BECB2B0B399C0046A90D /* TTTGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameUITests.swift; sourceTree = "<group>"; };
-		2FC8BECD2B0B399C0046A90D /* TTTGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			children = (
 				2FC8BEAF2B0B399B0046A90D /* TTTGame */,
 				2FC8BEC02B0B399C0046A90D /* TTTGameTests */,
-				2FC8BECA2B0B399C0046A90D /* TTTGameUITests */,
 				2FC8BEAE2B0B399B0046A90D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,15 +111,6 @@
 				2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */,
 			);
 			path = TTTGameTests;
-			sourceTree = "<group>";
-		};
-		2FC8BECA2B0B399C0046A90D /* TTTGameUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2FC8BECB2B0B399C0046A90D /* TTTGameUITests.swift */,
-				2FC8BECD2B0B399C0046A90D /* TTTGameUITestsLaunchTests.swift */,
-			);
-			path = TTTGameUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC8BECC2B0B399C0046A90D /* TTTGameUITests.swift in Sources */,
-				2FC8BECE2B0B399C0046A90D /* TTTGameUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
