@@ -8,14 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ViewBuilder
+    private func titleView() -> some View {
+        VStack(spacing: 20) {
+            Image(systemName: "number")
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 180, height: 180)
+            
+            Text("Tic Tac Toe")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+        }
+    }
+    
+    @ViewBuilder
+    private func buttonView() -> some View {
+        VStack {
+            
+        }
+    }
+    
+    @ViewBuilder
+    private func main() -> some View {
+        VStack {
+            titleView()
+            buttonView()
+        }
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            main()
         }
-        .padding()
     }
 }
 
