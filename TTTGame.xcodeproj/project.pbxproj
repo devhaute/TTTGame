@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A29759F2B1D8F4500C7E015 /* GameMode.swift */; };
 		2A2975A22B1D90C300C7E015 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2975A12B1D90C300C7E015 /* String.swift */; };
+		2A32E3E02B1D9E7A00F2C3FB /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3DF2B1D9E7A00F2C3FB /* ButtonStyle.swift */; };
 		2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */; };
 		2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB22B0B399B0046A90D /* HomeView.swift */; };
 		2FC8BEB52B0B399C0046A90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB42B0B399C0046A90D /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		2A29759F2B1D8F4500C7E015 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		2A2975A12B1D90C300C7E015 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2A32E3DF2B1D9E7A00F2C3FB /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		2FC8BEAD2B0B399B0046A90D /* TTTGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameApp.swift; sourceTree = "<group>"; };
 		2FC8BEB22B0B399B0046A90D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,8 +85,16 @@
 			isa = PBXGroup;
 			children = (
 				2A2975A12B1D90C300C7E015 /* String.swift */,
+				2A32E3DF2B1D9E7A00F2C3FB /* ButtonStyle.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2A32E3DE2B1D9DE500F2C3FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2FC8BEA42B0B399B0046A90D = {
@@ -111,6 +121,7 @@
 			children = (
 				2A2975A32B1D912500C7E015 /* App */,
 				2A29759E2B1D8F1E00C7E015 /* Models */,
+				2A32E3DE2B1D9DE500F2C3FB /* Utils */,
 				2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */,
 				2FC8BEB22B0B399B0046A90D /* HomeView.swift */,
 				2FC8BEB42B0B399C0046A90D /* Assets.xcassets */,
@@ -268,6 +279,7 @@
 				2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */,
 				2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */,
 				2A2975A22B1D90C300C7E015 /* String.swift in Sources */,
+				2A32E3E02B1D9E7A00F2C3FB /* ButtonStyle.swift in Sources */,
 				2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
