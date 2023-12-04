@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  TTTGame
 //
 //  Created by Tom Lee on 11/20/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @ViewBuilder
     private func titleView() -> some View {
         VStack(spacing: 20) {
@@ -16,23 +16,35 @@ struct ContentView: View {
                 .resizable()
                 .frame(width: 180, height: 180)
             
-            Text("Tic Tac Toe")
+            Text(AppString.appName)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
         }
+        .foregroundColor(.indigo)
+        .padding(.top, 50)
     }
     
     @ViewBuilder
     private func buttonView() -> some View {
-        VStack {
-            
+        VStack(spacing: 15) {
+            ForEach(GameMode.allCases) { mode in
+                Button {
+                    //
+                } label: {
+                    Text(mode.title)
+                }
+                .background(mode.baseColor)
+            }
         }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 50)
     }
     
     @ViewBuilder
     private func main() -> some View {
         VStack {
             titleView()
+            Spacer()
             buttonView()
         }
     }
@@ -45,5 +57,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeView()
 }

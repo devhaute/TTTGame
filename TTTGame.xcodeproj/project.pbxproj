@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A29759F2B1D8F4500C7E015 /* GameMode.swift */; };
+		2A2975A22B1D90C300C7E015 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2975A12B1D90C300C7E015 /* String.swift */; };
 		2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */; };
-		2FC8BEB32B0B399B0046A90D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB22B0B399B0046A90D /* ContentView.swift */; };
+		2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB22B0B399B0046A90D /* HomeView.swift */; };
 		2FC8BEB52B0B399C0046A90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB42B0B399C0046A90D /* Assets.xcassets */; };
 		2FC8BEB82B0B399C0046A90D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB72B0B399C0046A90D /* Preview Assets.xcassets */; };
 		2FC8BEC22B0B399C0046A90D /* TTTGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */; };
@@ -32,9 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A29759F2B1D8F4500C7E015 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		2A2975A12B1D90C300C7E015 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2FC8BEAD2B0B399B0046A90D /* TTTGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameApp.swift; sourceTree = "<group>"; };
-		2FC8BEB22B0B399B0046A90D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2FC8BEB22B0B399B0046A90D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2FC8BEB42B0B399C0046A90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FC8BEB72B0B399C0046A90D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2FC8BEBD2B0B399C0046A90D /* TTTGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A29759E2B1D8F1E00C7E015 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A29759F2B1D8F4500C7E015 /* GameMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A2975A32B1D912500C7E015 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2A2975A12B1D90C300C7E015 /* String.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		2FC8BEA42B0B399B0046A90D = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +109,10 @@
 		2FC8BEAF2B0B399B0046A90D /* TTTGame */ = {
 			isa = PBXGroup;
 			children = (
+				2A2975A32B1D912500C7E015 /* App */,
+				2A29759E2B1D8F1E00C7E015 /* Models */,
 				2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */,
-				2FC8BEB22B0B399B0046A90D /* ContentView.swift */,
+				2FC8BEB22B0B399B0046A90D /* HomeView.swift */,
 				2FC8BEB42B0B399C0046A90D /* Assets.xcassets */,
 				2FC8BEB62B0B399C0046A90D /* Preview Content */,
 			);
@@ -243,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC8BEB32B0B399B0046A90D /* ContentView.swift in Sources */,
+				2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */,
 				2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */,
+				2A2975A22B1D90C300C7E015 /* String.swift in Sources */,
+				2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
