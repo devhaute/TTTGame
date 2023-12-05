@@ -9,10 +9,12 @@ import SwiftUI
 
 struct GameView: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var viewMode = GameViewModel()
+    @StateObject private var viewModel: GameViewModel
     
-    let mode: GameMode
-    
+    init(mode: GameMode) {
+        _viewModel = .init(wrappedValue: GameViewModel(with: mode))
+    }
+     
     @ViewBuilder
     private func closeButton() -> some View {
         HStack {
@@ -42,7 +44,6 @@ struct GameView: View {
             Spacer()
             Text("Player 2: 0")
         }
-        .background(Color.gray)
         .foregroundColor(.white)
         .font(.title2)
         .fontWeight(.semibold)
@@ -51,19 +52,20 @@ struct GameView: View {
     @ViewBuilder
     private func gameStatus() -> some View {
         VStack {
-            Text("Player 1`s move")
+            Text("we are in \(viewModel.gameMode.title)")
                 .font(.title2)
+                .foregroundColor(.white)
         }
     }
     
     @ViewBuilder
     private func gameBoard(proxy: GeometryProxy) -> some View {
         VStack {
-            LazyVGrid(columns: viewMode.columns, spacing: 10) {
+            LazyVGrid(columns: viewModel.columns, spacing: 10) {
                 ForEach(0..<9) { _ in
                     ZStack {
                         BoardCircle(geometryProxy: proxy)
-                        BoardIndicatorView(imageName: "applelogo")
+                        BoardIndicatorView(imageName: "")
                     }
                 }
             }
@@ -88,6 +90,7 @@ struct GameView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 16)
+            .background(Color.indigo)
         }
     }
     

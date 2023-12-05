@@ -14,7 +14,7 @@ struct BoardCircle: View {
     
     var body: some View {
         Circle()
-            .fill(.red)
+            .fill(.white)
             .frame(
                 width: geometryProxy.size.width / sizeDivider - padding,
                 height: geometryProxy.size.width / sizeDivider - padding
