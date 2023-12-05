@@ -10,6 +10,10 @@
 		2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A29759F2B1D8F4500C7E015 /* GameMode.swift */; };
 		2A2975A22B1D90C300C7E015 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2975A12B1D90C300C7E015 /* String.swift */; };
 		2A32E3E02B1D9E7A00F2C3FB /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3DF2B1D9E7A00F2C3FB /* ButtonStyle.swift */; };
+		2A32E3E32B1DAAFF00F2C3FB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */; };
+		2A32E3E62B1DBEBD00F2C3FB /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E52B1DBEBD00F2C3FB /* GameViewModel.swift */; };
+		2A32E3E82B1DC2FB00F2C3FB /* BoardCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E72B1DC2FB00F2C3FB /* BoardCircle.swift */; };
+		2A32E3EB2B1F178F00F2C3FB /* BoardIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */; };
 		2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */; };
 		2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB22B0B399B0046A90D /* HomeView.swift */; };
 		2FC8BEB52B0B399C0046A90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB42B0B399C0046A90D /* Assets.xcassets */; };
@@ -38,6 +42,10 @@
 		2A29759F2B1D8F4500C7E015 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		2A2975A12B1D90C300C7E015 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2A32E3DF2B1D9E7A00F2C3FB /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2A32E3E52B1DBEBD00F2C3FB /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		2A32E3E72B1DC2FB00F2C3FB /* BoardCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCircle.swift; sourceTree = "<group>"; };
+		2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndicatorView.swift; sourceTree = "<group>"; };
 		2FC8BEAD2B0B399B0046A90D /* TTTGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameApp.swift; sourceTree = "<group>"; };
 		2FC8BEB22B0B399B0046A90D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -97,6 +105,33 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		2A32E3E12B1DAAE700F2C3FB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2A32E3E92B1DC30B00F2C3FB /* Components */,
+				2FC8BEB22B0B399B0046A90D /* HomeView.swift */,
+				2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */,
+				2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2A32E3E42B1DBE6400F2C3FB /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				2A32E3E52B1DBEBD00F2C3FB /* GameViewModel.swift */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		2A32E3E92B1DC30B00F2C3FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A32E3E72B1DC2FB00F2C3FB /* BoardCircle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2FC8BEA42B0B399B0046A90D = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +154,12 @@
 		2FC8BEAF2B0B399B0046A90D /* TTTGame */ = {
 			isa = PBXGroup;
 			children = (
-				2A2975A32B1D912500C7E015 /* App */,
-				2A29759E2B1D8F1E00C7E015 /* Models */,
-				2A32E3DE2B1D9DE500F2C3FB /* Utils */,
 				2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */,
-				2FC8BEB22B0B399B0046A90D /* HomeView.swift */,
+				2A2975A32B1D912500C7E015 /* App */,
+				2A32E3E42B1DBE6400F2C3FB /* Domains */,
+				2A29759E2B1D8F1E00C7E015 /* Models */,
+				2A32E3E12B1DAAE700F2C3FB /* Presentation */,
+				2A32E3DE2B1D9DE500F2C3FB /* Utils */,
 				2FC8BEB42B0B399C0046A90D /* Assets.xcassets */,
 				2FC8BEB62B0B399C0046A90D /* Preview Content */,
 			);
@@ -280,7 +316,11 @@
 				2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */,
 				2A2975A22B1D90C300C7E015 /* String.swift in Sources */,
 				2A32E3E02B1D9E7A00F2C3FB /* ButtonStyle.swift in Sources */,
+				2A32E3E32B1DAAFF00F2C3FB /* GameView.swift in Sources */,
+				2A32E3E82B1DC2FB00F2C3FB /* BoardCircle.swift in Sources */,
 				2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */,
+				2A32E3EB2B1F178F00F2C3FB /* BoardIndicatorView.swift in Sources */,
+				2A32E3E62B1DBEBD00F2C3FB /* GameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
