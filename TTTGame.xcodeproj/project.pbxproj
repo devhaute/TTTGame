@@ -13,7 +13,6 @@
 		2A32E3E32B1DAAFF00F2C3FB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */; };
 		2A32E3E62B1DBEBD00F2C3FB /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E52B1DBEBD00F2C3FB /* GameViewModel.swift */; };
 		2A32E3E82B1DC2FB00F2C3FB /* BoardCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3E72B1DC2FB00F2C3FB /* BoardCircle.swift */; };
-		2A32E3EB2B1F178F00F2C3FB /* BoardIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */; };
 		2A32E3ED2B1F244400F2C3FB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3EC2B1F244400F2C3FB /* Player.swift */; };
 		2A32E3EF2B1F28BF00F2C3FB /* GameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32E3EE2B1F28BF00F2C3FB /* GameMove.swift */; };
 		2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB02B0B399B0046A90D /* TTTGameApp.swift */; };
@@ -47,7 +46,6 @@
 		2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		2A32E3E52B1DBEBD00F2C3FB /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		2A32E3E72B1DC2FB00F2C3FB /* BoardCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCircle.swift; sourceTree = "<group>"; };
-		2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndicatorView.swift; sourceTree = "<group>"; };
 		2A32E3EC2B1F244400F2C3FB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2A32E3EE2B1F28BF00F2C3FB /* GameMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMove.swift; sourceTree = "<group>"; };
 		2FC8BEAD2B0B399B0046A90D /* TTTGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 				2A32E3E92B1DC30B00F2C3FB /* Components */,
 				2FC8BEB22B0B399B0046A90D /* HomeView.swift */,
 				2A32E3E22B1DAAFF00F2C3FB /* GameView.swift */,
-				2A32E3EA2B1F178F00F2C3FB /* BoardIndicatorView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 				2A32E3E32B1DAAFF00F2C3FB /* GameView.swift in Sources */,
 				2A32E3E82B1DC2FB00F2C3FB /* BoardCircle.swift in Sources */,
 				2A2975A02B1D8F4500C7E015 /* GameMode.swift in Sources */,
-				2A32E3EB2B1F178F00F2C3FB /* BoardIndicatorView.swift in Sources */,
 				2A32E3ED2B1F244400F2C3FB /* Player.swift in Sources */,
 				2A32E3E62B1DBEBD00F2C3FB /* GameViewModel.swift in Sources */,
 			);

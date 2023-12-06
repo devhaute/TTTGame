@@ -7,12 +7,15 @@
 
 import Foundation
 
+enum BoardCircleIndicator: String {
+    case xmark, circle
+}
+
 struct GameMove: Codable {
     let player: Player
     let boardIndex: Int
     
-    // SF Symbols
-    var indicator: String {
-        player == .player1 ? "xmark" : "circle"
+    var indicator: BoardCircleIndicator {
+        player == .player1 ? .xmark : .circle
     }
 }

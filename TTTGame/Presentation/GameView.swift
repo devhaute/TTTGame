@@ -52,7 +52,7 @@ struct GameView: View {
     @ViewBuilder
     private func gameStatus() -> some View {
         VStack {
-            Text("we are in \(viewModel.gameMode.title)")
+            Text("Game Status")
                 .font(.title2)
                 .foregroundColor(.white)
         }
@@ -63,10 +63,7 @@ struct GameView: View {
         VStack {
             LazyVGrid(columns: viewModel.columns, spacing: 10) {
                 ForEach(0..<9) { _ in
-                    ZStack {
-                        BoardCircle(geometryProxy: proxy)
-                        BoardIndicatorView(imageName: "")
-                    }
+                    BoardCircle(geometryProxy: proxy, indicator: nil)
                 }
             }
         }
