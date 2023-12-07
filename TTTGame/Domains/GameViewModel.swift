@@ -23,6 +23,8 @@ final class GameViewModel: ObservableObject {
     @Published private(set) var player2Name: String = ""
     @Published private(set) var player2Score: UInt8 = 0
     @Published private(set) var activePlayer: Player = .player1
+    @Published private(set) var showAlert: Bool = false
+    @Published private(set) var alertItem: AlertItem?
     @Published private(set) var moves: [GameMove?] = [
         nil, nil, nil,
         nil, nil, nil,
@@ -93,6 +95,22 @@ final class GameViewModel: ObservableObject {
             player2Score += 1
         }
     }
+    
+    private func showAlert(for state: GameState) {
+        gameNotification = state.description
+        
+        switch state {
+            
+        case .finished, .draw, .waitingForPlayer:
+            let title = (state == .finished) ? "\(activePlayer.name) has won!" : state.description
+            alertItem = .init(title: title, message: AppString.tryRematch)
+        case .quit:
+            let title = state.description
+            alertItem = .init(title: title, message: "", buttonTitle: "OK")
+        }
+        
+        showAlert = true
+    }
 }
 
 extension GameViewModel {
@@ -101,12 +119,14 @@ extension GameViewModel {
         moves[position] = .init(player: activePlayer, boardIndex: position)
         
         if checkForWin(in: moves) {
+            showAlert(for: .finished)
             increaseScore()
             resetGame()
             return
         }
         
         if checkForDraw(in: moves) {
+            showAlert(for: .draw)
             resetGame()
             return
         }
