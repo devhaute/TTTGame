@@ -52,7 +52,7 @@ struct GameView: View {
     @ViewBuilder
     private func gameStatus() -> some View {
         VStack {
-            Text("Game Status")
+            Text(viewModel.gameNotification)
                 .font(.title2)
                 .foregroundColor(.white)
         }
