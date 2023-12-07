@@ -40,9 +40,9 @@ struct GameView: View {
     @ViewBuilder
     private func scoreView() -> some View {
         HStack {
-            Text("Player 1: 0")
+            Text("\(viewModel.player1Name): \(viewModel.player1Score)")
             Spacer()
-            Text("Player 2: 0")
+            Text("\(viewModel.player2Name): \(viewModel.player2Score)")
         }
         .foregroundColor(.white)
         .font(.title2)
@@ -62,8 +62,11 @@ struct GameView: View {
     private func gameBoard(proxy: GeometryProxy) -> some View {
         VStack {
             LazyVGrid(columns: viewModel.columns, spacing: 10) {
-                ForEach(0..<9) { _ in
-                    BoardCircle(geometryProxy: proxy, indicator: nil)
+                ForEach(0..<9) { index in
+                    BoardCircle(geometryProxy: proxy, indicator: viewModel.moves[index]?.indicator)
+                        .onTapGesture {
+                            viewModel.processMove(for: index)
+                        }
                 }
             }
         }
