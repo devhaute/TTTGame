@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 final class GameViewModel: ObservableObject {
     let columns: [GridItem] = [
@@ -15,10 +16,11 @@ final class GameViewModel: ObservableObject {
     ]
     
     @Published private(set) var gameMode: GameMode
-    @Published private(set) var gameNotification: String = ""
-    @Published private(set) var player1Name: String = Player.player1.name
+    @Published private(set) var gameNotification: String = "It`s \(Player.player1.name)'s move"
+    @Published private var players: [Player]
+    @Published private(set) var player1Name: String = ""
     @Published private(set) var player1Score: UInt8 = 0
-    @Published private(set) var player2Name: String = Player.player2.name
+    @Published private(set) var player2Name: String = ""
     @Published private(set) var player2Score: UInt8 = 0
     @Published private(set) var activePlayer: Player = .player1
     @Published private(set) var moves: [GameMove?] = [
@@ -26,8 +28,6 @@ final class GameViewModel: ObservableObject {
         nil, nil, nil,
         nil, nil, nil
     ]
-    
-    private let players: [Player]
     private let winPatterns: Set<Set<Int>> = [
          [0, 1, 2], [3, 4, 5], [6, 7, 8],
          [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -46,11 +46,25 @@ final class GameViewModel: ObservableObject {
             players = [.player1, .player2]
         }
         
-        updateNotification()
+        configure()
+    }
+    
+    private func configure() {
+        $players
+            .compactMap(\.first?.name)
+            .assign(to: &$player1Name)
+        
+        $players
+            .compactMap(\.last?.name)
+            .assign(to: &$player2Name)
     }
     
     private func updateNotification() {
         gameNotification = "It`s \(activePlayer.name)'s move"
+    }
+    
+    private func switchActivePlayer() {
+        activePlayer = players.first(where: { $0 != activePlayer })!
     }
     
     private func isSquareOccupied(in moves: [GameMove?], for index: Int) -> Bool {
@@ -88,14 +102,22 @@ extension GameViewModel {
         
         if checkForWin(in: moves) {
             increaseScore()
+            resetGame()
             return
         }
         
         if checkForDraw(in: moves) {
+            resetGame()
             return
         }
         
-        activePlayer = players.first(where: { $0 != activePlayer })!
+        switchActivePlayer()
+        updateNotification()
+    }
+    
+    func resetGame() {
+        activePlayer = .player1
+        moves = Array(repeating: nil, count: moves.count)
         updateNotification()
     }
 }
