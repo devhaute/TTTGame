@@ -16,20 +16,21 @@ final class GameViewModel: ObservableObject {
     ]
     
     @Published private(set) var gameMode: GameMode
-    @Published private(set) var gameNotification: String = "It`s \(Player.player1.name)'s move"
+    @Published private(set) var gameNotification: String = ""
     @Published private var players: [Player]
     @Published private(set) var player1Name: String = ""
     @Published private(set) var player1Score: UInt8 = 0
     @Published private(set) var player2Name: String = ""
     @Published private(set) var player2Score: UInt8 = 0
     @Published private(set) var activePlayer: Player = .player1
-    @Published private(set) var showAlert: Bool = false
     @Published private(set) var alertItem: AlertItem?
+    @Published var showAlert: Bool = false
     @Published private(set) var moves: [GameMove?] = [
         nil, nil, nil,
         nil, nil, nil,
         nil, nil, nil
     ]
+    
     private let winPatterns: Set<Set<Int>> = [
          [0, 1, 2], [3, 4, 5], [6, 7, 8],
          [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -48,6 +49,7 @@ final class GameViewModel: ObservableObject {
             players = [.player1, .player2]
         }
         
+        gameNotification = "It`s \(Player.player1.name)'s move"
         configure()
     }
     
@@ -59,10 +61,6 @@ final class GameViewModel: ObservableObject {
         $players
             .compactMap(\.last?.name)
             .assign(to: &$player2Name)
-    }
-    
-    private func updateNotification() {
-        gameNotification = "It`s \(activePlayer.name)'s move"
     }
     
     private func switchActivePlayer() {
@@ -121,23 +119,21 @@ extension GameViewModel {
         if checkForWin(in: moves) {
             showAlert(for: .finished)
             increaseScore()
-            resetGame()
             return
         }
         
         if checkForDraw(in: moves) {
             showAlert(for: .draw)
-            resetGame()
             return
         }
         
         switchActivePlayer()
-        updateNotification()
+        gameNotification = "It`s \(activePlayer.name)'s move"
     }
     
     func resetGame() {
         activePlayer = .player1
         moves = Array(repeating: nil, count: moves.count)
-        updateNotification()
+        gameNotification = "It`s \(Player.player1.name)'s move"
     }
 }

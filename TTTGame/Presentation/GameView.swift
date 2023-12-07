@@ -96,6 +96,15 @@ struct GameView: View {
     
     var body: some View {
         main()
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(
+                    title: viewModel.alertItem!.title,
+                    message: viewModel.alertItem?.message,
+                    dismissButton: .default(viewModel.alertItem!.buttonTitle, action: {
+                        viewModel.resetGame()
+                    })
+                )
+            }
     }
 }
 
