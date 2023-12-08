@@ -37,6 +37,8 @@ final class GameViewModel: ObservableObject {
          [0, 4, 8], [2, 4, 6]
     ]
     
+    private let centerPosition = 4
+    
     init(with gameMode: GameMode) {
         self.gameMode = gameMode
         
@@ -65,6 +67,59 @@ final class GameViewModel: ObservableObject {
     
     private func switchActivePlayer() {
         activePlayer = players.first(where: { $0 != activePlayer })!
+    }
+    
+    private func computerMove() {
+        let timeRange: ClosedRange<UInt64> = 800_000_000...1_500_000_000
+        let computerProcessingTime = UInt64.random(in: timeRange)
+        
+        Task { @MainActor in
+            try await Task.sleep(nanoseconds: computerProcessingTime)
+            processMove(for: getAIMovePosition(in: moves))
+        }
+    }
+    
+    private func getAIMovePosition(in moves: [GameMove?]) -> Int {
+        // cpu가 이길 수 있는지 확인 후 놓기
+        let cpuMoves = moves.compactMap({ $0 }).filter({ $0.player == .cpu })
+        let cpuPositions = Set(cpuMoves.map({ $0.boardIndex }))
+        
+        if let position = getTheWinnigSpot(for: cpuPositions) {
+            return position
+        }
+        
+        // 다른 플레이어가 이길 수 있는지 확인 후 차단
+        let humanMoves = moves.compactMap({ $0 }).filter({ $0.player == .player1 })
+        let humanPositions = Set(humanMoves.map({ $0.boardIndex }))
+        
+        if let position = getTheWinnigSpot(for: humanPositions) {
+            return position
+        }
+        
+        // 중간에 놓기
+        if !isSquareOccupied(in: moves, for: centerPosition) {
+            return centerPosition
+        }
+        
+        // 랜덤 놓기
+        var randomPosition = Int.random(in: 0...moves.count)
+        while isSquareOccupied(in: moves, for: randomPosition) {
+            randomPosition = Int.random(in: 0...moves.count)
+        }
+        
+        return randomPosition
+    }
+    
+    private func getTheWinnigSpot(for positions: Set<Int>) -> Int? {
+        for pattern in winPatterns {
+            let winPositions = pattern.subtracting(positions)
+            
+            if winPositions.count == 1 && !isSquareOccupied(in: moves, for: winPositions.first!) {
+                return winPositions.first!
+            }
+        }
+        
+        return nil
     }
     
     private func isSquareOccupied(in moves: [GameMove?], for index: Int) -> Bool {
@@ -129,6 +184,10 @@ extension GameViewModel {
         
         switchActivePlayer()
         gameNotification = "It`s \(activePlayer.name)'s move"
+        
+        if gameMode == .vsCPU && activePlayer == .cpu {
+            computerMove()
+        }
     }
     
     func resetGame() {
