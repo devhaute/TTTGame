@@ -23,6 +23,7 @@ final class GameViewModel: ObservableObject {
     @Published private(set) var player2Name: String = ""
     @Published private(set) var player2Score: UInt8 = 0
     @Published private(set) var activePlayer: Player = .player1
+    @Published private(set) var preventMovement : Bool = false
     @Published private(set) var alertItem: AlertItem?
     @Published var showAlert: Bool = false
     @Published private(set) var moves: [GameMove?] = [
@@ -67,9 +68,12 @@ final class GameViewModel: ObservableObject {
     
     private func switchActivePlayer() {
         activePlayer = players.first(where: { $0 != activePlayer })!
+        gameNotification = "It`s \(activePlayer.name)'s move"
+        preventMovement = false
     }
     
     private func computerMove() {
+        preventMovement = true
         let timeRange: ClosedRange<UInt64> = 800_000_000...1_500_000_000
         let computerProcessingTime = UInt64.random(in: timeRange)
         
@@ -183,7 +187,6 @@ extension GameViewModel {
         }
         
         switchActivePlayer()
-        gameNotification = "It`s \(activePlayer.name)'s move"
         
         if gameMode == .vsCPU && activePlayer == .cpu {
             computerMove()
@@ -192,6 +195,7 @@ extension GameViewModel {
     
     func resetGame() {
         activePlayer = .player1
+        preventMovement = false
         moves = Array(repeating: nil, count: moves.count)
         gameNotification = "It`s \(Player.player1.name)'s move"
     }

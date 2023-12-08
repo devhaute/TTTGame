@@ -67,6 +67,7 @@ struct GameView: View {
                         .onTapGesture {
                             viewModel.processMove(for: index)
                         }
+                        .disabled(viewModel.preventMovement)
                 }
             }
         }
