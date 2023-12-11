@@ -13,13 +13,13 @@ enum GameState {
     var description: String {
         switch self {
         case .finished:
-            return AppString.gameHasFinished
+            return Constants.String.gameHasFinished
         case .draw:
-            return AppString.draw
+            return Constants.String.draw
         case .waitingForPlayer:
-            return AppString.waitingForPlayer
+            return Constants.String.waitingForPlayer
         case .quit:
-            return AppString.playerLeft
+            return Constants.String.playerLeft
         }
     }
 }
