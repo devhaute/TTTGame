@@ -160,7 +160,7 @@ final class GameViewModel: ObservableObject {
             
         case .finished, .draw, .waitingForPlayer:
             let title = (state == .finished) ? "\(activePlayer.name) has won!" : state.description
-            alertItem = .init(title: title, message: AppString.tryRematch)
+            alertItem = .init(title: title, message: Constants.String.tryRematch)
         case .quit:
             let title = state.description
             alertItem = .init(title: title, message: "", buttonTitle: "OK")
