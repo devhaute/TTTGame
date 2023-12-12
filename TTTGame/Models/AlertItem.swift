@@ -13,7 +13,7 @@ struct AlertItem: Identifiable {
     let message: Text
     let buttonTitle: Text
     
-    init(title: String, message: String, buttonTitle: String = AppString.rematch) {
+    init(title: String, message: String, buttonTitle: String = Constants.String.rematch) {
         self.title = Text(title)
         self.message = Text(message)
         self.buttonTitle = Text(buttonTitle)

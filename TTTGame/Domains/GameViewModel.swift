@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 final class GameViewModel: ObservableObject {
+    let onlineReposotory = OnlineGameRepository()
     let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -23,6 +24,7 @@ final class GameViewModel: ObservableObject {
     @Published private(set) var player2Name: String = ""
     @Published private(set) var player2Score: UInt8 = 0
     @Published private(set) var activePlayer: Player = .player1
+    @Published private(set) var onlineGame: Game?
     @Published private(set) var preventMovement : Bool = false
     @Published private(set) var alertItem: AlertItem?
     @Published var showAlert: Bool = false
@@ -50,6 +52,7 @@ final class GameViewModel: ObservableObject {
             players = [.player1, .cpu]
         case .online:
             players = [.player1, .player2]
+            startOnlineGame()
         }
         
         gameNotification = "It`s \(Player.player1.name)'s move"
@@ -64,6 +67,17 @@ final class GameViewModel: ObservableObject {
         $players
             .compactMap(\.last?.name)
             .assign(to: &$player2Name)
+        
+        onlineReposotory.$game
+            .assign(to: &$onlineGame)
+    }
+    
+    private func startOnlineGame() {
+        gameNotification = Constants.String.waitingForPlayer
+        
+        Task {
+            await onlineReposotory.joinGame()
+        }
     }
     
     private func switchActivePlayer() {

@@ -11,12 +11,6 @@ import Factory
 
 let localPlayerID = UUID().uuidString
 
-protocol OnlineGameRepositoryProtocol {
-    func joinGame() async
-    func updateGame(_ game: Game) async
-    func quitGame()
-}
-
 final class OnlineGameRepository: ObservableObject {
     @Injected(\.firebaseService) private var firebaseService
     @Published private(set) var game: Game!

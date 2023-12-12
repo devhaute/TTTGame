@@ -23,7 +23,7 @@ struct GameView: View {
             Button {
                 dismiss()
             } label: {
-                Text(AppString.exit)
+                Text(Constants.String.exit)
                     .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundColor(.red)

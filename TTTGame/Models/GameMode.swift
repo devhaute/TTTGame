@@ -15,11 +15,11 @@ enum GameMode: CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .vsHuman:
-            return AppString.vsHuman
+            return Constants.String.vsHuman
         case .vsCPU:
-            return AppString.vsCpu
+            return Constants.String.vsCpu
         case .online:
-            return AppString.online
+            return Constants.String.online
         }
     }
     

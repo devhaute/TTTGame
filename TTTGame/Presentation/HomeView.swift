@@ -18,7 +18,7 @@ struct HomeView: View {
                 .resizable()
                 .frame(width: 180, height: 180)
             
-            Text(AppString.appName)
+            Text(Constants.String.appName)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
         }
