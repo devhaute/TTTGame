@@ -1,5 +1,5 @@
 //
-//  FirebaseRepository.swift
+//  FirebaseService.swift
 //  TTTGame
 //
 //  Created by kai on 12/11/23.
@@ -11,14 +11,14 @@ import Combine
 
 public typealias EncodableIdentifiable = Encodable & Identifiable
 
-protocol FirebaseRepositoryProtocol {
+protocol FirebaseServiceProtocol {
     func getDocuments<T: Codable>(from collection: FCCollectionReference, for playerID: String) async throws -> [T]?
     func listen<T: Codable>(from collection: FCCollectionReference, documentID: String) async throws -> AnyPublisher<T?, Error>
     func deleteDocument(with ID: String, from collection: FCCollectionReference)
     func saveDocument<T: EncodableIdentifiable>(data: T, to collection: FCCollectionReference) throws
 }
 
-final class FirebaseRepository: FirebaseRepositoryProtocol {
+final class FirebaseService: FirebaseServiceProtocol {
     func getDocuments<T: Codable>(from collection: FCCollectionReference, for playerID: String) async throws -> [T]? {
         let snapshot = try await firebaseReference(collection)
             .whereField(Constants.String.player2ID, isEqualTo: "")
@@ -62,18 +62,3 @@ final class FirebaseRepository: FirebaseRepositoryProtocol {
         try firebaseReference(collection).document(id).setData(from: data)
     }
 }
-//
-//struct Game: Codable, Identifiable {
-//    let id: String
-//    
-//    var player1ID: String
-//    var player1Score: String
-//    
-//    var player2ID: String
-//    var player2Score: String
-//    
-//    var activePlayerID: String
-//    var winnigPlayerID: String
-//    
-//    var moves: [GameMove?]
-//}

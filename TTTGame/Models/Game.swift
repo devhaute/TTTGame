@@ -11,10 +11,10 @@ struct Game: Codable, Identifiable {
     let id: String
     
     var player1ID: String
-    var player1Score: String
+    var player1Score: Int
     
     var player2ID: String
-    var player2Score: String
+    var player2Score: Int
     
     var activePlayerID: String
     var winnigPlayerID: String
