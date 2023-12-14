@@ -12,7 +12,7 @@ struct GameView: View {
     @StateObject private var viewModel: GameViewModel
     
     init(mode: GameMode) {
-        _viewModel = .init(wrappedValue: GameViewModel(with: mode))
+        _viewModel = .init(wrappedValue: GameViewModel(with: mode, onlineRepository: OnlineGameRepository()))
     }
      
     @ViewBuilder

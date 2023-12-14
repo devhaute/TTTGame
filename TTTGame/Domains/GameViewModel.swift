@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 final class GameViewModel: ObservableObject {
-    let onlineReposotory = OnlineGameRepository()
     let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -42,8 +41,11 @@ final class GameViewModel: ObservableObject {
     
     private let centerPosition = 4
     
-    init(with gameMode: GameMode) {
+    private let onlineRepository: OnlineGameRepository
+    
+    init(with gameMode: GameMode, onlineRepository: OnlineGameRepository) {
         self.gameMode = gameMode
+        self.onlineRepository = onlineRepository
         
         switch gameMode {
         case .vsHuman:
@@ -68,7 +70,7 @@ final class GameViewModel: ObservableObject {
             .compactMap(\.last?.name)
             .assign(to: &$player2Name)
         
-        onlineReposotory.$game
+        onlineRepository.$game
             .assign(to: &$onlineGame)
     }
     
@@ -76,7 +78,7 @@ final class GameViewModel: ObservableObject {
         gameNotification = Constants.String.waitingForPlayer
         
         Task {
-            await onlineReposotory.joinGame()
+            await onlineRepository.joinGame()
         }
     }
     
