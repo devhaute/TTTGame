@@ -29,6 +29,7 @@
 		2AD319912B26DB29004F85E6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD319902B26DB29004F85E6 /* FirebaseFirestoreSwift */; };
 		2AD319932B26E587004F85E6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD319922B26E587004F85E6 /* FirebaseService.swift */; };
 		2AD319952B270116004F85E6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD319942B270116004F85E6 /* Error.swift */; };
+		2AE7214B2B2B09810020CDAE /* MockFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7214A2B2B09810020CDAE /* MockFirebaseService.swift */; };
 		2AE880E22B2447460008E04E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE880E12B2447460008E04E /* Game.swift */; };
 		2AF5B72F2B21CC7D005189BC /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5B72E2B21CC7D005189BC /* AlertItem.swift */; };
 		2AF5B7312B21D573005189BC /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5B7302B21D573005189BC /* GameState.swift */; };
@@ -36,18 +37,11 @@
 		2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB22B0B399B0046A90D /* HomeView.swift */; };
 		2FC8BEB52B0B399C0046A90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB42B0B399C0046A90D /* Assets.xcassets */; };
 		2FC8BEB82B0B399C0046A90D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC8BEB72B0B399C0046A90D /* Preview Assets.xcassets */; };
-		2FC8BEC22B0B399C0046A90D /* TTTGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */; };
+		2FC8BEC22B0B399C0046A90D /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8BEC12B0B399C0046A90D /* GameViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2FC8BEBE2B0B399C0046A90D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FC8BEA52B0B399B0046A90D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2FC8BEAC2B0B399B0046A90D;
-			remoteInfo = TTTGame;
-		};
-		2FC8BEC82B0B399C0046A90D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2FC8BEA52B0B399B0046A90D /* Project object */;
 			proxyType = 1;
@@ -71,6 +65,7 @@
 		2AD319892B26D9AD004F85E6 /* FCCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCCollectionReference.swift; sourceTree = "<group>"; };
 		2AD319922B26E587004F85E6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		2AD319942B270116004F85E6 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		2AE7214A2B2B09810020CDAE /* MockFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseService.swift; sourceTree = "<group>"; };
 		2AE880E12B2447460008E04E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2AF5B72E2B21CC7D005189BC /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		2AF5B7302B21D573005189BC /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -80,8 +75,7 @@
 		2FC8BEB42B0B399C0046A90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FC8BEB72B0B399C0046A90D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2FC8BEBD2B0B399C0046A90D /* TTTGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTGameTests.swift; sourceTree = "<group>"; };
-		2FC8BEC72B0B399C0046A90D /* TTTGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FC8BEC12B0B399C0046A90D /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +95,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2FC8BEBA2B0B399C0046A90D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FC8BEC42B0B399C0046A90D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,6 +166,7 @@
 				2A65E8642B2862A700212D8A /* ServiceDependencies.swift */,
 				2AD319892B26D9AD004F85E6 /* FCCollectionReference.swift */,
 				2AD319922B26E587004F85E6 /* FirebaseService.swift */,
+				2AE7214A2B2B09810020CDAE /* MockFirebaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,7 +210,6 @@
 			children = (
 				2FC8BEAD2B0B399B0046A90D /* TTTGame.app */,
 				2FC8BEBD2B0B399C0046A90D /* TTTGameTests.xctest */,
-				2FC8BEC72B0B399C0046A90D /* TTTGameUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,7 +242,7 @@
 		2FC8BEC02B0B399C0046A90D /* TTTGameTests */ = {
 			isa = PBXGroup;
 			children = (
-				2FC8BEC12B0B399C0046A90D /* TTTGameTests.swift */,
+				2FC8BEC12B0B399C0046A90D /* GameViewModelTests.swift */,
 			);
 			path = TTTGameTests;
 			sourceTree = "<group>";
@@ -308,24 +295,6 @@
 			productReference = 2FC8BEBD2B0B399C0046A90D /* TTTGameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2FC8BEC62B0B399C0046A90D /* TTTGameUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2FC8BED72B0B399C0046A90D /* Build configuration list for PBXNativeTarget "TTTGameUITests" */;
-			buildPhases = (
-				2FC8BEC32B0B399C0046A90D /* Sources */,
-				2FC8BEC42B0B399C0046A90D /* Frameworks */,
-				2FC8BEC52B0B399C0046A90D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2FC8BEC92B0B399C0046A90D /* PBXTargetDependency */,
-			);
-			name = TTTGameUITests;
-			productName = TTTGameUITests;
-			productReference = 2FC8BEC72B0B399C0046A90D /* TTTGameUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,10 +309,6 @@
 						CreatedOnToolsVersion = 15.0.1;
 					};
 					2FC8BEBC2B0B399C0046A90D = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 2FC8BEAC2B0B399B0046A90D;
-					};
-					2FC8BEC62B0B399C0046A90D = {
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = 2FC8BEAC2B0B399B0046A90D;
 					};
@@ -368,7 +333,6 @@
 			targets = (
 				2FC8BEAC2B0B399B0046A90D /* TTTGame */,
 				2FC8BEBC2B0B399C0046A90D /* TTTGameTests */,
-				2FC8BEC62B0B399C0046A90D /* TTTGameUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -391,13 +355,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FC8BEC52B0B399C0046A90D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,6 +366,7 @@
 				2FC8BEB32B0B399B0046A90D /* HomeView.swift in Sources */,
 				2A32E3EF2B1F28BF00F2C3FB /* GameMove.swift in Sources */,
 				2AE880E22B2447460008E04E /* Game.swift in Sources */,
+				2AE7214B2B2B09810020CDAE /* MockFirebaseService.swift in Sources */,
 				2AD319952B270116004F85E6 /* Error.swift in Sources */,
 				2FC8BEB12B0B399B0046A90D /* TTTGameApp.swift in Sources */,
 				2A2975A22B1D90C300C7E015 /* Constants.swift in Sources */,
@@ -430,14 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC8BEC22B0B399C0046A90D /* TTTGameTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FC8BEC32B0B399C0046A90D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2FC8BEC22B0B399C0046A90D /* GameViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,11 +399,6 @@
 			isa = PBXTargetDependency;
 			target = 2FC8BEAC2B0B399B0046A90D /* TTTGame */;
 			targetProxy = 2FC8BEBE2B0B399C0046A90D /* PBXContainerItemProxy */;
-		};
-		2FC8BEC92B0B399C0046A90D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2FC8BEAC2B0B399B0046A90D /* TTTGame */;
-			targetProxy = 2FC8BEC82B0B399C0046A90D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -682,42 +628,6 @@
 			};
 			name = Release;
 		};
-		2FC8BED82B0B399C0046A90D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D9U7C3MMTS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devhaute.TTTGameUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TTTGame;
-			};
-			name = Debug;
-		};
-		2FC8BED92B0B399C0046A90D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D9U7C3MMTS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devhaute.TTTGameUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TTTGame;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -744,15 +654,6 @@
 			buildConfigurations = (
 				2FC8BED52B0B399C0046A90D /* Debug */,
 				2FC8BED62B0B399C0046A90D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2FC8BED72B0B399C0046A90D /* Build configuration list for PBXNativeTarget "TTTGameUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FC8BED82B0B399C0046A90D /* Debug */,
-				2FC8BED92B0B399C0046A90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
